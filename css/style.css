@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #d8d8d8;
+    background-color: #f2f2f2;
 }
 
 .main-container {
@@ -74,7 +74,7 @@ h1 {
     position: absolute;
     width: 57vh;
     height: 57vh;
-    background-color: #d8d8d8;
+    background-color: #f2f2f2;
     border-radius: 50%;
     left: calc(50% - 57vh/2);
     top: calc(50% - 57vh/2);
