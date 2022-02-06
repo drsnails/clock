@@ -12,6 +12,7 @@ function init() {
     gElMinutesHand = document.querySelector('.minutes-hand')
     gElSecondsHand = document.querySelector('.seconds-hand')
     gH1 = document.querySelector('h1')
+    renderClock()
     var gIntervalId = setInterval(renderClock, 1000)
 }
 
@@ -20,7 +21,8 @@ function renderLines() {
 
     let strHTML = ''
     for (let i = 0; i < 12; i++) {
-        strHTML += `<div  style="transform: rotateZ(${i * 30}deg)" class="clock-hand line"></div>`
+        const style = `transform: rotateZ(${i * 30}deg); --content: '${i || 12}'; --after-rot: -${i * 30}deg`
+        strHTML += `<div style="${style}" class="clock-hand line"></div>`
     }
     elClock.innerHTML += strHTML
 
@@ -32,9 +34,9 @@ function renderClock() {
     const seconds = time.getSeconds()
     const minuets = time.getMinutes() + seconds / 60
     const hours = (time.getHours() % 12) + minuets / 60
+    renderSecondsHand(seconds)
     renderMinutesHand(minuets)
     renderHoursHand(hours)
-    renderSecondsHand(seconds)
     gH1.innerText = getTime(time)
 
 }

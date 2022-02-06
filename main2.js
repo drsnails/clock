@@ -1,13 +1,14 @@
-var visitedNums = []
 
+// console.log('getShortestStr: ', getShortestStr());
 function getShortestStr() {
+    var visitedNums = {}
     let result = '000'
     let longStr = getLongNumStr()
     for (let i = 0; i < longStr.length - 3; i++) {
         let currTest = longStr.substring(i, i + 4)
-        if (!visitedNums.includes(currTest)) {
+        if (!visitedNums[currTest]) {
             result += currTest[3]
-            visitedNums.push(currTest)
+            visitedNums[currTest] = true
         }
     }
     return result
@@ -29,3 +30,12 @@ function get4DigStr(num) {
     return str + num
 }
 
+function getNDigStr(num, digNum) {
+    let str = ''
+    for (let i = digNum - 1; i > 0; i--) {
+        if (num < 10 ** i) str += '0'
+    }
+    return str + num
+}
+
+console.log('getNDigStr(1234, 4): ', getNDigStr(1234, 4));
