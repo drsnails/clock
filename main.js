@@ -3,7 +3,7 @@ var gElHoursHand
 var gElMinutesHand
 var gElSecondsHand
 var gH1
-
+var gIntervalId
 
 function init() {
     // return
@@ -13,7 +13,7 @@ function init() {
     gElSecondsHand = document.querySelector('.seconds-hand')
     gH1 = document.querySelector('h1')
     renderClock()
-    var gIntervalId = setInterval(renderClock, 1000)
+    gIntervalId = setInterval(renderClock, 1000)
 }
 
 function renderLines() {

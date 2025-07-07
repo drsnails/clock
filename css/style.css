@@ -23,6 +23,7 @@ h1 {
     border: 7px solid darkblue;
     position: relative;
 }
+
 .amit {
     top: 90px;
     font-size: 40px;
@@ -107,4 +108,8 @@ h1 {
     border-radius: 50%;
     background-color: white;
     z-index: 6;
+}
+
+.hide {
+    display: none;
 }
